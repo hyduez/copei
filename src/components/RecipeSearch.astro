@@ -3,12 +3,13 @@ import { Icon } from 'astro-icon/components';
 import { getCollection, type CollectionEntry } from 'astro:content';
 import RecipeCard from './RecipeCard.astro';
 
+const allCategories = ['Healthy', 'Junk'];
+
 const articles: CollectionEntry<'articles'>[] = (
-  await getCollection('articles')
-).sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+await getCollection('articles')
+).sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()).filter(x => allCategories.includes(x.data.category ?? ''));
 
 const allTags = Array.from(new Set(articles.flatMap((r) => r.data.tags)));
-const allCategories = ['Healthy', 'Junk'];
 
 const firstArticle = articles[0];
 ---

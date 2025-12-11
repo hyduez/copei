@@ -1,7 +1,6 @@
 ---
 title: 'Second post'
 description: 'Lorem ipsum dolor sit amet'
-category: 'Junk'
 pubDate: 'Jul 15 2022'
 image: '../../assets/blog-placeholder-4.jpg'
 time: '25 mins'

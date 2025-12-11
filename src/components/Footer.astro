@@ -11,16 +11,23 @@ const today = new Date();
           <div class="col-span-1 md:col-span-2">
             <div class="flex items-center gap-2 mb-4">
               <div class="flex items-center">
-				<Image src={COPEI} alt="COPEI's logo" width={230} />
+                <Image src={COPEI} alt="COPEI's logo" width={230} />
               </div>
             </div>
             <p class="text-gray-400 mb-4 max-w-sm">
               Made by AE10's students in the cycle I118. Integrating Technology and Engineering into the course project.
             </p>
-            <div class="flex items-center gap-2 text-sm text-gray-500">
-              <span>Built with</span>
-              <a href="https://astro.build/" target="_blank"><Icon name="simple-icons:astro" class="w-4 h-4 text-red-500 fill-red-500" /></a>
-              <span>and respecting licensed trademarks. By <a href="https://github.com/hyduez" target="_blank" class="hover:text-green-500 transition-colors">Paulo Viteri</a>.</span>
+            <div class="flex flex-col gap-2 w-full text-sm">
+              <div class="flex items-center gap-2 flex-wrap">
+                <span>Built with</span>
+                <a href="https://astro.build/" target="_blank" aria-label="Astro website">
+                  <Icon name="simple-icons:astro" class="w-4 h-4 text-red-500 fill-red-500" />
+                </a>
+                <span>and respecting licensed trademarks.</span>
+              </div>
+              <span class="text-gray-500 text-left">
+                By <a href="https://github.com/hyduez" target="_blank" class="hover:text-green-500 transition-colors">Paulo Viteri</a>.
+              </span>
             </div>
           </div>
           <div>
