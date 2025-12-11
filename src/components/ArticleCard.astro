@@ -37,9 +37,12 @@ const getCategoryLabel = () => {
 <div class="group cursor-pointer bg-white rounded-2xl overflow-hidden border border-gray-200 hover:shadow-2xl transition-all duration-300 hover:-translate-y-1">
     <a href={`/articles/${article.id}`}>
     <div class="relative h-48 overflow-hidden">
-        {image && <Image 
+        {image && 
+        // @ts-expect-error
+        <Image 
           src={image} 
           alt={title}
+          inferSize
           class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
         />}
         <div class="absolute top-4 left-4">

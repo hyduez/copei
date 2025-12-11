@@ -2,14 +2,13 @@
 import { Icon } from 'astro-icon/components';
 import { Image } from 'astro:assets';
 import type { CollectionEntry } from 'astro:content';
-import FormattedDate from './FormattedDate.astro';
 
 interface Props {
   article: CollectionEntry<'articles'>;
 }
 
 const { article } = Astro.props;
-const { title, description, category, pubDate, servings, image, tags, time } =
+const { title, description, category, servings, image, tags, time } =
   article.data;
 
 const getCategoryStyle = () => {
@@ -45,9 +44,12 @@ const getCategoryLabel = () => {
   class="recipe-card bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden"
   >
     <div class="relative h-48 overflow-hidden">
-        {image && <Image 
+        {image && 
+        // @ts-expect-error
+        <Image 
           src={image} 
           alt={title}
+          inferSize
           class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
         />}
         <div class="absolute top-4 left-4">
