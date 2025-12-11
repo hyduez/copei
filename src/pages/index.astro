@@ -5,12 +5,6 @@ import Header from '../components/Header.astro';
 import Main from '../components/Main.astro';
 import MainArticles from '../components/MainArticles.astro';
 import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
-
-import { getCollection } from 'astro:content';
-
-const posts = (await getCollection('articles')).sort(
-  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
-);
 ---
 
 <!doctype html>
