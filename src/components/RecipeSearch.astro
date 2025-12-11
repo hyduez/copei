@@ -108,14 +108,24 @@ const firstArticle = articles[0];
   const noResultsDiv = document.getElementById('no-results');
   const templateElement = document.getElementById('recipe-card-template');
   
-  const allArticles = articles; 
+  const allArticles = articles.map(article => ({
+      ...article,
+      searchContent: (article.data.title + ' ' + (article.data.description || '')).toLowerCase(),
+      tags: article.data.tags || [],
+      category: article.data.category || '',
+      calories: article.data.calories,
+      time: article.data.time,
+      servings: article.data.servings,
+      image: article.data.image,
+  }));
+  
   const rawCardHTML = templateElement ? templateElement.innerHTML : null;
 
   let currentSearchQuery = '';
   let currentSelectedCategory = 'all';
   let currentSelectedTag = 'all';
   
-  const getCategoryStyleJS = (category) => {
+  const getCategoryStyle = (category) => {
     switch (category) {
         case 'Healthy':
             return 'bg-green-100 text-green-700 border-green-200';
@@ -126,7 +136,7 @@ const firstArticle = articles[0];
     }
   };
 
-  const getCategoryLabelJS = (category) => {
+  const getCategoryLabel = (category) => {
     switch (category) {
         case 'Healthy':
             return '🥗 Healthy';
@@ -144,41 +154,56 @@ const firstArticle = articles[0];
     tempDiv.innerHTML = rawCardHTML.trim();
 
     const cardWrapper = tempDiv.firstChild; 
-    
     const card = cardWrapper.querySelector('article');
 
     if (!card) return null;
 
-    card.dataset.recipeId = article.slug;
-    card.dataset.recipeTags = article.data.tags?.join(',') || '';
-    card.dataset.recipeCategory = article.data.category || '';
-    card.dataset.recipeSearch = (article.data.title + ' ' + (article.data.description || '')).toLowerCase();
+    card.dataset.recipeId = article.id;
+    card.dataset.recipeTags = article.tags.join(',') || '';
+    card.dataset.recipeCategory = article.category;
+    card.dataset.recipeSearch = article.searchContent;
     
-    cardWrapper.href = `/articles/${article.slug}`;
+    cardWrapper.href = `/articles/${article.id}`;
     
     card.querySelector('h3').textContent = article.data.title;
     card.querySelector('p.text-gray-600').textContent = article.data.description;
 
-    const metadataSpans = card.querySelectorAll('.flex.items-center span');
-    if (metadataSpans[0]) metadataSpans[0].textContent = article.data.time;
-    if (metadataSpans[1]) metadataSpans[1].textContent = `${article.data.servings} Servings`;
+    const metadataContainer = card.querySelector('.flex.items-center.text-xs.text-gray-500.gap-3');
+
+    const caloriesHTML = article.calories ? `
+      <div class="px-2 py-0.5 rounded-full text-xs border border-red-200 bg-red-100 text-red-700 flex items-center gap-1">
+        <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="currentColor" d="M17.66 11.2c-.23-.3-.51-.56-.77-.82c-.67-.6-1.43-1.03-2.07-1.66C13.33 7.26 13 4.85 13.95 3c-.95.23-1.78.75-2.49 1.32c-2.59 2.08-3.61 5.75-2.39 8.9c.04.1.08.2.08.33c0 .22-.15.42-.35.5c-.23.1-.47.04-.66-.12a.6.6 0 0 1-.14-.17c-1.13-1.43-1.31-3.48-.55-5.12C5.78 10 4.87 12.3 5 14.47c.06.5.12 1 .29 1.5c.14.6.41 1.2.71 1.73c1.08 1.73 2.95 2.97 4.96 3.22c2.14.27 4.43-.12 6.07-1.6c1.83-1.66 2.47-4.32 1.53-6.6l-.13-.26c-.21-.46-.77-1.26-.77-1.26m-3.16 6.3c-.28.24-.74.5-1.1.6c-1.12.4-2.24-.16-2.9-.82c1.19-.28 1.9-1.16 2.11-2.05c.17-.8-.15-1.46-.28-2.23c-.12-.74-.1-1.37.17-2.06c.19.38.39.76.63 1.06c.77 1 1.98 1.44 2.24 2.8c.04.14.06.28.06.43c.03.82-.33 1.72-.93 2.27"/>
+          </svg>
+        <span>${article.calories} Kcal</span>
+      </div>
+    ` : '';
+    
+    if (metadataContainer) {
+        metadataContainer.innerHTML = `
+            <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="currentColor" d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8s-8 3.58-8 8s3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13l.75 1.3z"/></svg>
+            <span>${article.time || 'N/A'}</span>
+            <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="currentColor" d="M16 17v2H2v-2s0-4 7-4s7 4 7 4m-3.5-9.5A3.5 3.5 0 1 0 9 11a3.5 3.5 0 0 0 3.5-3.5m3.44 5.5A5.32 5.32 0 0 1 18 17v2h4v-2s0-3.63-6.06-4M15 4a3.4 3.4 0 0 0-1.93.59a5 5 0 0 1 0 5.82A3.4 3.4 0 0 0 15 11a3.5 3.5 0 0 0 0-7"/></svg>
+            <span>${article.servings || 'N/A'} Servings</span>
+            ${caloriesHTML}
+        `;
+    }
 
     const tagsContainer = card.querySelector('.flex.flex-wrap.gap-1');
-    tagsContainer.innerHTML = article.data.tags?.map(tag => 
+    tagsContainer.innerHTML = article.tags.map(tag => 
         `<span class="text-xs bg-gray-100 text-gray-700 px-2 py-0.5 rounded-full capitalize">${tag}</span>`
     ).join('') || '';
 
     const categorySpan = card.querySelector('.absolute.top-4.left-4 span');
     if (categorySpan) {
-        const categoryStyle = getCategoryStyleJS(article.data.category);
-        const categoryLabel = getCategoryLabelJS(article.data.category);
+        const categoryStyle = getCategoryStyle(article.category);
+        const categoryLabel = getCategoryLabel(article.category);
         categorySpan.className = `px-3 py-1 rounded-full text-xs border ${categoryStyle}`;
         categorySpan.textContent = categoryLabel;
     }
 
     const imgElement = card.querySelector('img');
-    if (imgElement && article.data.image && article.data.image.src) {
-        imgElement.src = article.data.image.src;
+    if (imgElement && article.image && article.image.src) {
+        imgElement.src = article.image.src;
     }
 
     return cardWrapper;
@@ -205,14 +230,10 @@ const firstArticle = articles[0];
   }
 
   function renderRecipes() {
-    let filteredArticles = allArticles.filter(article => {
-        const searchText = (article.data.title + ' ' + (article.data.description || '')).toLowerCase();
-        const articleTags = article.data.tags;
-        const articleCategory = article.data.category || ''; 
-        
-        const matchesSearch = currentSearchQuery.length === 0 || searchText.includes(currentSearchQuery.toLowerCase());
-        const matchesTag = currentSelectedTag === 'all' || articleTags.includes(currentSelectedTag);
-        const matchesCategory = currentSelectedCategory === 'all' || articleCategory === currentSelectedCategory; 
+    const filteredArticles = allArticles.filter(article => {
+        const matchesSearch = currentSearchQuery.length === 0 || article.searchContent.includes(currentSearchQuery.toLowerCase());
+        const matchesTag = currentSelectedTag === 'all' || article.tags.includes(currentSelectedTag);
+        const matchesCategory = currentSelectedCategory === 'all' || article.category === currentSelectedCategory; 
 
         return matchesSearch && matchesTag && matchesCategory;
     });
@@ -233,26 +254,12 @@ const firstArticle = articles[0];
     noResultsDiv.style.display = filteredArticles.length === 0 ? 'block' : 'none';
   }
   
-  function updateTagStyles() {
-    tagContainer.querySelectorAll('button').forEach(btn => {
-      const tag = btn.dataset.tag;
+  function updateButtonStyles(container, currentSelection, dataAttribute) {
+    container.querySelectorAll('button').forEach(btn => {
+      const value = btn.dataset[dataAttribute];
       let classes = 'px-4 py-2 rounded-full text-sm transition-all capitalize ';
 
-      if (tag === currentSelectedTag) {
-        classes += 'bg-green-600 text-white shadow-lg';
-      } else {
-        classes += 'bg-white text-gray-600 border border-gray-200 hover:border-green-600';
-      }
-      btn.className = classes;
-    });
-  }
-
-  function updateCategoryStyles() {
-    categoryContainer.querySelectorAll('button').forEach(btn => {
-      const category = btn.dataset.category; 
-      let classes = 'px-4 py-2 rounded-full text-sm transition-all capitalize ';
-
-      if (category === currentSelectedCategory) {
+      if (value === currentSelection) {
         classes += 'bg-green-600 text-white shadow-lg';
       } else {
         classes += 'bg-white text-gray-600 border border-gray-200 hover:border-green-600';
@@ -261,30 +268,36 @@ const firstArticle = articles[0];
     });
   }
   
-  // --- Event Listeners ---
+  function handleFilterChange(type, value) {
+      if (type === 'tag') {
+          currentSelectedTag = value;
+          updateButtonStyles(tagContainer, currentSelectedTag, 'tag');
+      } else if (type === 'category') {
+          currentSelectedCategory = value; 
+          updateButtonStyles(categoryContainer, currentSelectedCategory, 'category');
+      } else if (type === 'search') {
+          currentSearchQuery = value;
+      }
+
+      renderRecipes();
+      updateURL(currentSearchQuery, currentSelectedTag, currentSelectedCategory);
+  }
+
   searchInput.addEventListener('input', (e) => {
-    currentSearchQuery = e.target.value;
-    renderRecipes();
-    updateURL(currentSearchQuery, currentSelectedTag, currentSelectedCategory);
+    handleFilterChange('search', e.target.value);
   });
 
   tagContainer.addEventListener('click', (e) => {
     const button = e.target.closest('button');
     if (button && button.dataset.tag) {
-      currentSelectedTag = button.dataset.tag;
-      updateTagStyles();
-      renderRecipes();
-      updateURL(currentSearchQuery, currentSelectedTag, currentSelectedCategory);
+      handleFilterChange('tag', button.dataset.tag);
     }
   });
 
   categoryContainer.addEventListener('click', (e) => {
     const button = e.target.closest('button');
     if (button && button.dataset.category) {
-      currentSelectedCategory = button.dataset.category; 
-      updateCategoryStyles();
-      renderRecipes();
-      updateURL(currentSearchQuery, currentSelectedTag, currentSelectedCategory);
+      handleFilterChange('category', button.dataset.category);
     }
   });
 
@@ -292,7 +305,7 @@ const firstArticle = articles[0];
       const urlParams = new URLSearchParams(window.location.search);
       const q = urlParams.get('q');
       const tag = urlParams.get('tag');
-      const category = urlParams.get('category')
+      const category = urlParams.get('category');
 
       if (q) {
           currentSearchQuery = q.toLowerCase();
@@ -302,11 +315,11 @@ const firstArticle = articles[0];
           currentSelectedTag = tag;
       }
       if (category) {
-          currentSelectedCategory = category
+          currentSelectedCategory = category;
       }
       
-      updateCategoryStyles();
-      updateTagStyles();
+      updateButtonStyles(categoryContainer, currentSelectedCategory, 'category');
+      updateButtonStyles(tagContainer, currentSelectedTag, 'tag');
       renderRecipes(); 
   }
 
