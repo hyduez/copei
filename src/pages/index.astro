@@ -14,16 +14,13 @@ const posts = (await getCollection('articles')).sort(
 ---
 
 <!doctype html>
-<html lang="en">
-	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-	</head>
-	<body>
-		<Header />
-		<main>
-			<Main />
-			<MainArticles />
-		</main>
-		<Footer />
-	</body>
+<html lang="en" class="h-full"> <head>
+        <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+    </head>
+    <body class="flex flex-col min-h-screen"> <Header />
+        <main class="flex-grow"> <Main />
+            <MainArticles />
+        </main>
+        <Footer />
+    </body>
 </html>
