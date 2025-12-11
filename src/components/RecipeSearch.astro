@@ -1,0 +1,234 @@
+---
+import { Icon } from 'astro-icon/components';
+import { getCollection } from 'astro:content';
+import RecipeCard from './RecipeCard.astro';
+
+const articles = (await getCollection('articles')).sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+);
+
+const allTags = Array.from(new Set(articles.flatMap((r) => r.data.tags)));
+const allCategories = ['Healthy', 'Junk']
+---
+
+<section class="py-20 min-h-screen" id="recipe-search-section">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-12">
+      <div class="inline-flex items-center gap-2 bg-green-100 text-green-700 px-4 py-2 rounded-full mb-4">
+        <Icon name="mdi:chef-hat" class="w-4 h-4" />
+        <span class="text-sm">Recipe Database</span>
+      </div>
+      <h1 class="text-5xl mb-4">Find Your Perfect Healthy Recipe</h1>
+      <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+        Search through our collection of delicious, nutritious recipes that actually taste good
+      </p>
+    </div>
+
+    <div class="flex flex-wrap gap-3 justify-center mb-12" id="filter-categories">
+      <button
+        data-category="all" class="px-4 py-2 rounded-full text-sm transition-all bg-green-600 text-white shadow-lg"
+      >
+        All Categories
+      </button>
+      {allCategories.map(tag => (
+        <button
+          data-category={tag} class="px-4 py-2 rounded-full text-sm transition-all capitalize bg-white text-gray-600 border border-gray-200 hover:border-green-600"
+        >
+          {tag}
+        </button>
+      ))}
+    </div>
+
+    <div class="max-w-2xl mx-auto mb-8">
+      <div class="relative">
+        <Icon name="mdi:search" class="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
+        <input
+          type="text"
+          placeholder="Search recipes by name or ingredient..."
+          id="search-input"
+          data-search
+          class="w-full pl-12 pr-4 py-4 rounded-full border-2 border-gray-200 focus:border-green-500 focus:outline-none text-lg"
+        />
+      </div>
+    </div>
+
+    <div class="flex flex-wrap gap-3 justify-center mb-12" id="filter-tags">
+      <button
+        data-tag="all"
+        class="px-4 py-2 rounded-full text-sm transition-all bg-green-600 text-white shadow-lg"
+      >
+        All Tags
+      </button>
+      {allTags.map(tag => (
+        <button
+          data-tag={tag}
+          class="px-4 py-2 rounded-full text-sm transition-all capitalize bg-white text-gray-600 border border-gray-200 hover:border-green-600"
+        >
+          {tag}
+        </button>
+      ))}
+    </div>
+
+    <div class="text-center mb-8">
+      <p class="text-gray-600">
+        Found <span class="text-green-600" id="results-count">{articles.length}</span> delicious recipes
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="recipe-grid">
+      {articles.map(article => (
+        <RecipeCard article={article} />
+      ))}
+    </div>
+
+    <div class="text-center py-20 hidden" id="no-results">
+      <div class="text-6xl mb-4">🔍</div>
+      <h3 class="text-2xl mb-2">No recipes found</h3>
+      <p class="text-gray-600">Try adjusting your search or filters</p>
+    </div>
+
+  </div>
+</section>
+
+<script define:vars={{ articles: articles }}>
+
+  const searchInput = document.getElementById('search-input');
+  const tagContainer = document.getElementById('filter-tags');
+  const categoryContainer = document.getElementById('filter-categories');
+  const recipeGrid = document.getElementById('recipe-grid');
+  const resultsCountSpan = document.getElementById('results-count');
+  const noResultsDiv = document.getElementById('no-results');
+
+  let currentSearchQuery = '';
+  let currentSelectedCategory = 'all';
+  let currentSelectedTag = 'all';
+
+  function updateURL(search, tag, category) {
+      const url = new URL(window.location);
+      if (search) {
+          url.searchParams.set('q', search);
+      } else {
+          url.searchParams.delete('q');
+      }
+      if (tag && tag !== 'all') {
+          url.searchParams.set('tag', tag);
+      } else {
+          url.searchParams.delete('tag');
+      }
+      if (category && category !== 'all') {
+          url.searchParams.set('category', category);
+      } else {
+          url.searchParams.delete('category');
+      }
+      window.history.pushState({}, '', url);
+  }
+
+  function renderRecipes() {
+    const cards = Array.from(recipeGrid.querySelectorAll('[data-recipe-id]'));
+    let matchesCount = 0;
+
+    const currentSearchQueryLowerCase = currentSearchQuery.toLowerCase().trim();
+
+    cards.forEach(card => {
+      const cardTags = card.dataset.recipeTags ? card.dataset.recipeTags.split(',') : [];
+      const cardCategory = card.dataset.recipeCategory || ''; 
+      const cardSearchText = card.dataset.recipeSearch || '';
+      
+      const matchesSearch = currentSearchQueryLowerCase === '' || cardSearchText.includes(currentSearchQueryLowerCase);
+      
+      const matchesTag = currentSelectedTag === 'all' || cardTags.includes(currentSelectedTag);
+      
+      const matchesCategory = currentSelectedCategory === 'all' || cardCategory === currentSelectedCategory; 
+
+      if (matchesSearch && matchesTag && matchesCategory) {
+        card.style.display = 'block';
+        matchesCount++;
+      } else {
+        card.style.display = 'none';
+      }
+    });
+
+    resultsCountSpan.textContent = matchesCount;
+    noResultsDiv.style.display = matchesCount === 0 ? 'block' : 'none';
+  }
+
+  function updateTagStyles() {
+      tagContainer.querySelectorAll('button').forEach(btn => {
+          const tag = btn.dataset.tag;
+          
+          let classes = 'px-4 py-2 rounded-full text-sm transition-all capitalize ';
+
+          if (tag === currentSelectedTag) {
+              classes += 'bg-green-600 text-white shadow-lg';
+          } else {
+              classes += 'bg-white text-gray-600 border border-gray-200 hover:border-green-600';
+          }
+          btn.className = classes;
+      });
+  }
+
+  function updateCategoryStyles() {
+      categoryContainer.querySelectorAll('button').forEach(btn => {
+          const category = btn.dataset.category; 
+          
+          let classes = 'px-4 py-2 rounded-full text-sm transition-all capitalize ';
+
+          if (category === currentSelectedCategory) {
+              classes += 'bg-green-600 text-white shadow-lg';
+          } else {
+              classes += 'bg-white text-gray-600 border border-gray-200 hover:border-green-600';
+          }
+          btn.className = classes;
+      });
+  }
+
+  searchInput.addEventListener('input', (e) => {
+    currentSearchQuery = e.target.value.toLowerCase().trim();
+    renderRecipes();
+    updateURL(currentSearchQuery, currentSelectedTag, currentSelectedCategory);
+  });
+
+  tagContainer.addEventListener('click', (e) => {
+    const button = e.target.closest('button');
+    if (button && button.dataset.tag) {
+      currentSelectedTag = button.dataset.tag;
+      updateTagStyles();
+      renderRecipes();
+      updateURL(currentSearchQuery, currentSelectedTag, currentSelectedCategory);
+    }
+  });
+
+  categoryContainer.addEventListener('click', (e) => {
+    const button = e.target.closest('button');
+    if (button && button.dataset.category) {
+      currentSelectedCategory = button.dataset.category; 
+      updateCategoryStyles();
+      renderRecipes();
+      updateURL(currentSearchQuery, currentSelectedTag, currentSelectedCategory);
+    }
+  });
+
+  function initializeFromURL() {
+      const urlParams = new URLSearchParams(window.location.search);
+      const q = urlParams.get('q');
+      const tag = urlParams.get('tag');
+      const category = urlParams.get('category')
+
+      if (q) {
+          currentSearchQuery = q.toLowerCase();
+          searchInput.value = q;
+      }
+      if (tag) {
+          currentSelectedTag = tag;
+      }
+      if (category) {
+          currentSelectedCategory = category
+      }
+      
+      updateCategoryStyles();
+      updateTagStyles();
+      renderRecipes();
+  }
+
+  document.addEventListener('DOMContentLoaded', initializeFromURL);
+</script>

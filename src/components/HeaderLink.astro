@@ -6,19 +6,20 @@ type Props = HTMLAttributes<'a'>;
 const { href, class: className, ...props } = Astro.props;
 const pathname = Astro.url.pathname.replace(import.meta.env.BASE_URL, '');
 const subpath = pathname.match(/[^\/]+/g);
-const isActive = href === pathname || href === '/' + (subpath?.[0] || '');
+const isActive = href === pathname || href === `/${subpath?.[0] || ''}`;
+
+const activeClasses = 'text-green-600 font-bold border-b-4 border-green-600';
+const inactiveClasses =
+  'text-gray-600 hover:text-gray-900 border-b-4 border-transparent';
+const baseClasses = 'transition-colors duration-200';
+
+const finalClasses = `${baseClasses} ${
+  isActive ? activeClasses : inactiveClasses
+}`;
+
+const combinedClasses = [className, finalClasses];
 ---
 
-<a href={href} class:list={[className, { active: isActive }]} {...props}>
+<a href={href} class:list={combinedClasses} {...props}>
 	<slot />
 </a>
-<style>
-	a {
-		display: inline-block;
-		text-decoration: none;
-	}
-	a.active {
-		font-weight: bolder;
-		text-decoration: underline;
-	}
-</style>

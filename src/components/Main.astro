@@ -1,0 +1,48 @@
+---
+import { Icon } from 'astro-icon/components';
+---
+
+<section class="relative"> 
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-32 relative"> 
+        <div class="text-center">
+            
+            <div class="inline-flex items-center gap-2 bg-green-100 text-green-700 px-4 py-2 rounded-full mb-6">
+                <Icon name="mdi:sparkles" class="w-4 h-4" />
+                <span class="text-sm">Your Guide to Delicious Decisions</span>
+            </div>
+            <h1 class="text-5xl sm:text-7xl mb-6 tracking-tight">
+                <span class="text-green-600">Eat Smart</span>
+                <br />
+                <span class="text-gray-900">or</span>
+                <br />
+                <span class="text-orange-600">Eat Happy</span>
+                <span class="text-gray-900">?</span>
+            </h1>
+            <p class="text-xl text-gray-600 max-w-2xl mx-auto mb-12">
+                Welcome to the ultimate food showdown! We're here to help you navigate the delicious 
+                (and sometimes ridiculous) world of nutrition. No judgment, just facts... and fun! 🥗🍕
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="articles?category=Healthy" class="px-8 py-4 bg-green-600 text-white rounded-full hover:bg-green-700 transition-colors shadow-lg hover:shadow-xl">
+                    Explore Healthy Recipes
+                </a>
+                <a href="/articles?category=Junk" class="px-8 py-4 bg-white text-gray-900 rounded-full border-2 border-gray-200 hover:border-orange-600 hover:text-orange-600 transition-colors">
+                    I'm Feeling Naughty 😈
+                </a>
+            </div>
+        </div>
+        
+        <div class="mt-16 flex justify-center animate-bounce">
+            <Icon name="mdi:arrow-down" class="w-6 h-6 text-gray-400" />
+        </div>
+
+        <div class="absolute top-10 left-0 text-7xl opacity-20 hidden lg:block -translate-x-full">🥑</div>
+        
+        <div class="absolute top-20 right-0 text-7xl opacity-20 hidden lg:block translate-x-full">🍔</div>
+        
+        <div class="absolute bottom-20 left-1/4 text-7xl opacity-20 hidden sm:block">🥗</div>
+        
+        <div class="absolute bottom-10 right-1/4 text-7xl opacity-20 hidden sm:block">🍰</div>
+        
+    </div>  
+</section>

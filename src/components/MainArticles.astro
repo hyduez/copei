@@ -1,0 +1,31 @@
+---
+import { Icon } from 'astro-icon/components';
+import { getCollection } from 'astro:content';
+import ArticleCard from './ArticleCard.astro';
+import type { ACTION_ERROR_CODES } from 'astro:actions';
+
+const articles = (await getCollection('articles')).sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+);
+---
+
+<section id="latest" class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between mb-12">
+            <div>
+                <h2 class="text-4xl mb-3">Latest Articles</h2>
+                <p class="text-gray-600">The good, the bad, and the delicious one 🔥</p>
+            </div>
+            <div class="hidden sm:flex items-center gap-2 text-sm text-gray-500">
+                <Icon name="mdi:trending-up" class="w-4 h-4" />
+                <span>Trending Now</span>
+            </div>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {articles.map((article) => (
+            <ArticleCard article={article} />
+          ))}
+        </div>
+    </div>
+</section>
