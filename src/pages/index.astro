@@ -11,8 +11,10 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 <html lang="en" class="h-full"> <head>
         <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
     </head>
-    <body class="flex flex-col min-h-screen"> <Header />
-        <main class="flex-grow"> <Main />
+    <body class="flex flex-col min-h-screen font-sans">
+        <Header />
+        <main class="flex-grow">
+            <Main />
             <MainArticles />
         </main>
         <Footer />

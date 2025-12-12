@@ -41,7 +41,7 @@ const getCategoryLabel = () => {
   data-recipe-tags={tags?.join(',')}
   data-recipe-category={category}
   data-recipe-search={ (title + ' ' + description).toLowerCase() }
-  class="recipe-card bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden"
+  class="group cursor-pointer bg-white rounded-2xl overflow-hidden border border-gray-200 hover:shadow-2xl transition-all duration-300 hover:-translate-y-1"
   >
     <div class="relative h-48 overflow-hidden">
         {image && 
@@ -49,7 +49,10 @@ const getCategoryLabel = () => {
         <Image 
           src={image} 
           alt={title}
-          inferSize
+          width={720}
+          height={480}
+          loading="lazy"
+          placeholder="dominantColor"
           class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
         />}
         <div class="absolute top-4 left-4">
@@ -58,7 +61,7 @@ const getCategoryLabel = () => {
           </span>
         </div>
     </div>
-    <div class="p-4">
+    <div class="p-3">
       <h3 class="text-xl font-bold mb-2">{title}</h3>
       <p class="text-gray-600 text-sm mb-3">{description}</p>
       <div class="flex items-center text-xs text-gray-500 gap-3">

@@ -42,7 +42,10 @@ const getCategoryLabel = () => {
         <Image 
           src={image} 
           alt={title}
-          inferSize
+          width={720}
+          height={480}
+          loading="lazy"
+          placeholder="dominantColor"
           class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
         />}
         <div class="absolute top-4 left-4">
