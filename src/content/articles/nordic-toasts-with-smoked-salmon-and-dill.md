@@ -1,7 +1,7 @@
 ---
 title: 'Nordic Toasts with Smoked Salmon and Dill'
 description: 'Thin slices of smoked salmon with a citrus touch and fresh herbs.'
-category: 'Healthy'
+category: 'healthy'
 pubDate: 'Dec 11 2025'
 image: '../../assets/articles/nordic-toasts-with-smoked-salmon-and-dill.webp'
 time: '15 mins'

@@ -1,7 +1,7 @@
 ---
 title: 'Grilled Lemon Herb Shrimp Skewers'
 description: 'Juicy marinated and grilled shrimp, perfect for a barbecue.'
-category: 'Healthy'
+category: 'healthy'
 pubDate: 'Dec 11 2025'
 image: '../../assets/articles/grilled-lemon-herb-shrimp-skewers.webp'
 time: '25 mins'

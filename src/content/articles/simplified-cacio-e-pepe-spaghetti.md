@@ -1,7 +1,7 @@
 ---
 title: 'Simplified Cacio e Pepe Spaghetti'
 description: 'Simple and comforting pasta with butter, black pepper, and Parmesan cheese.'
-category: 'Junk'
+category: 'junk'
 pubDate: 'Dec 11 2025'
 image: '../../assets/articles/simplified-cacio-e-pepe-spaghetti.webp'
 time: '20 mins'

@@ -34,11 +34,11 @@ const firstArticle = articles[0];
       >
         All Categories
       </button>
-      {allCategories.map(tag => (
+      {allCategories.map(category => (
         <button
-          data-category={tag} class="px-4 py-2 rounded-full text-sm transition-all capitalize bg-white text-gray-600 border border-gray-200 hover:border-green-600"
+          data-category={category.toLowerCase()} class="px-4 py-2 rounded-full text-sm transition-all capitalize bg-white text-gray-600 border border-gray-200 hover:border-green-600"
         >
-          {tag}
+          {category.toLowerCase()}
         </button>
       ))}
     </div>
@@ -114,7 +114,7 @@ const firstArticle = articles[0];
       ...article,
       searchContent: (article.data.title + ' ' + (article.data.description || '')).toLowerCase(),
       tags: article.data.tags || [],
-      category: article.data.category || '',
+      category: (article.data.category || '').toLowerCase(),
       calories: article.data.calories,
       time: article.data.time,
       servings: article.data.servings,
@@ -129,9 +129,9 @@ const firstArticle = articles[0];
   
   const getCategoryStyle = (category) => {
     switch (category) {
-        case 'Healthy':
+        case 'healthy':
             return 'bg-green-100 text-green-700 border-green-200';
-        case 'Junk':
+        case 'junk':
             return 'bg-orange-100 text-orange-700 border-orange-200';
         default:
             return 'bg-purple-100 text-purple-700 border-purple-200';
@@ -140,12 +140,12 @@ const firstArticle = articles[0];
 
   const getCategoryLabel = (category) => {
     switch (category) {
-        case 'Healthy':
+        case 'healthy':
             return '🥗 Healthy';
-        case 'Junk':
+        case 'junk':
             return '🍔 Junk';
         default:
-            return '⚖️ Both';
+            return '🌟 Miscellaneous';
     }
   };
 
