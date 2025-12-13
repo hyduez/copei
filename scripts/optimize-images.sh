@@ -1,5 +1,5 @@
 #!/bin/bash
-QUALITY=15
+QUALITY=5
 BASE_DIR=${1:-.}
 
 convert_to_webp() {
@@ -20,19 +20,11 @@ convert_to_webp() {
 export -f convert_to_webp
 export QUALITY
 
-find "$BASE_DIR" -type f \( -iname "*.png" -o -iname "*.jpg" -o -iname "*.jpeg" \) | while read -r input_file; do
-    
-    if [[ "$input_file" == *.webp ]] || [[ "$input_file" == *.WEBP ]]; then
-        continue
-    fi
+find "$BASE_DIR" -type f \( -iname "*.png" -o -iname "*.jpg" -o -iname "*.jpeg" -o -iname "*.webp" \) | while read -r input_file; do
     
     output_file="${input_file%.*}.webp"
     
-    if [ ! -f "$output_file" ]; then
-        convert_to_webp "$input_file" "$output_file"
-    else
-        echo "-> Skipping: $input_file (It already exists $output_file)"
-    fi
+    convert_to_webp "$input_file" "$output_file"
     
 done
 
