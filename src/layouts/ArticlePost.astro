@@ -12,75 +12,288 @@ const { title, description, pubDate, updatedDate, image } = Astro.props;
 ---
 
 <html lang="en">
-	<head>
-		<BaseHead title={title} description={description} />
-		<style>
-			main {
-				width: calc(100% - 2em);
-				max-width: 100%;
-				margin: 0;
-			}
-			.hero-image {
-				width: 100%;
-			}
-			.hero-image img {
-				display: block;
-				margin: 0 auto;
-				border-radius: 12px;
-				box-shadow: var(--box-shadow);
-			}
-			.prose {
-				width: 720px;
-				max-width: calc(100% - 2em);
-				margin: auto;
-				padding: 1em;
-				color: rgb(var(--gray-dark));
-			}
-			.title {
-				margin-bottom: 1em;
-				padding: 1em 0;
-				text-align: center;
-				line-height: 1;
-			}
-			.title h1 {
-				margin: 0 0 0.5em 0;
-			}
-			.date {
-				margin-bottom: 0.5em;
-				color: rgb(var(--gray));
-			}
-			.last-updated-on {
-				font-style: italic;
-			}
-		</style>
-	</head>
+  <head>
+    <BaseHead title={title} description={description} />
+    <style>
+      :root {
+        --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+        
+        --color-background: #ffffff;
+        --color-foreground: #09090b;
+        --color-muted: #71717a;
+        --color-border: #e4e4e7;
+        --color-accent: #18181b;
+        --color-accent-bg: #f4f4f5;
+        
+        --radius-lg: 0.5rem;
+        --radius-md: 0.375rem;
+      }
 
-	<body>
-		<Header />
-		<main>
-			<article>
-				<div class="hero-image">
-					{image && <Image width={1020} height={510} src={image} alt="" />}
-				</div>
-				<div class="prose">
-					<div class="title">
-						<div class="date">
-							<FormattedDate date={pubDate} />
-							{
-								updatedDate && (
-									<div class="last-updated-on">
-										Last updated on <FormattedDate date={updatedDate} />
-									</div>
-								)
-							}
-						</div>
-						<h1>{title}</h1>
-						<hr />
-					</div>
-					<slot />
-				</div>
-			</article>
-		</main>
-		<Footer />
-	</body>
+      body {
+        color: var(--color-foreground);
+        background-color: var(--color-background);
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+
+      main {
+        width: 100%;
+        max-width: 768px;
+        margin: 0 auto;
+        padding: 2rem 1.5rem 6rem 1.5rem;
+      }
+
+      .hero-section {
+        margin-bottom: 3rem;
+        text-align: center;
+      }
+
+      .hero-image-container {
+        width: 100%;
+        margin-bottom: 2rem;
+        border-radius: var(--radius-lg);
+        overflow: hidden;
+        border: 1px solid var(--color-border);
+        box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+      }
+
+      .hero-image-container img {
+        display: block;
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+      }
+
+      .article-meta {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        color: var(--color-muted);
+        font-size: 0.875rem;
+        margin-bottom: 1rem;
+        font-weight: 500;
+      }
+
+      .title h1 {
+        font-size: 2.5rem;
+        font-weight: 800;
+        line-height: 1.1;
+        letter-spacing: -0.025em;
+        margin: 0 0 0.5rem 0;
+        color: var(--color-foreground);
+      }
+
+      .description {
+        font-size: 1.25rem;
+        color: var(--color-muted);
+        line-height: 1.6;
+        margin-top: 0.5rem;
+      }
+
+      hr.separator {
+        border: 0;
+        height: 1px;
+        background: var(--color-border);
+        margin: 2rem 0;
+      }
+      
+      .prose {
+        line-height: 1.75;
+        font-size: 1rem;
+      }
+
+      .prose :global(h1),
+      .prose :global(h2),
+      .prose :global(h3),
+      .prose :global(h4) {
+        color: var(--color-foreground);
+        font-weight: 600;
+        letter-spacing: -0.025em;
+        margin-top: 2.5em;
+        margin-bottom: 1em;
+        line-height: 1.25;
+      }
+
+	  .prose :global(h1) {
+        font-size: 2em;
+        border-bottom: 1px solid var(--color-border);
+        padding-bottom: 0.3em;
+      }
+
+      .prose :global(h2) {
+        font-size: 1.75em;
+        border-bottom: 1px solid var(--color-border);
+        padding-bottom: 0.3em;
+      }
+
+      .prose :global(h3) {
+        font-size: 1.3em;
+      }
+
+      .prose :global(h4) {
+        font-size: 1.1em;
+      }
+
+      .prose :global(p) {
+        margin-bottom: 1.5em;
+        color: #3f3f46;
+      }
+
+      .prose :global(strong) {
+        font-weight: 700;
+        color: var(--color-foreground);
+      }
+
+      .prose :global(a) {
+        color: var(--color-foreground);
+        text-decoration: underline;
+        text-decoration-thickness: 1px;
+        text-underline-offset: 4px;
+        transition: color 0.2s;
+      }
+
+      .prose :global(a:hover) {
+        color: #52525b;
+        text-decoration-color: #52525b;
+      }
+
+      /* Lists */
+      .prose :global(ul), .prose :global(ol) {
+        margin-bottom: 1.5em;
+        padding-left: 1.5em;
+      }
+      
+      .prose :global(li) {
+        margin-bottom: 0.5em;
+        padding-left: 0.4em;
+      }
+      
+      .prose :global(ul) { list-style-type: disc; }
+      .prose :global(ol) { list-style-type: decimal; }
+
+      /* Quotes */
+      .prose :global(blockquote) {
+        border-left: 3px solid var(--color-border);
+        padding-left: 1.25em;
+        margin: 1.5em 0;
+        font-style: italic;
+        color: var(--color-muted);
+      }
+
+      /* Code & Pre */
+      .prose :global(code) {
+        font-family: var(--font-mono);
+        font-size: 0.875em;
+        background-color: var(--color-accent-bg);
+        color: var(--color-accent);
+        padding: 0.2rem 0.3rem;
+        border-radius: var(--radius-md);
+        border: 1px solid var(--color-border);
+      }
+
+      .prose :global(pre) {
+        background-color: #18181b !important;
+        color: #e4e4e7 !important;
+        padding: 1rem;
+        border-radius: var(--radius-lg);
+        overflow-x: auto;
+        margin: 1.5em 0;
+        border: 1px solid var(--color-border);
+      }
+
+      .prose :global(pre code) {
+        background-color: transparent;
+        border: none;
+        color: inherit;
+        padding: 0;
+        font-size: 0.9em;
+      }
+
+      .prose :global(img) {
+        border-radius: var(--radius-lg);
+        border: 1px solid var(--color-border);
+        margin: 2em auto;
+        display: block;
+        max-width: 100%;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+      }
+
+      .prose :global(hr) {
+        border: 0;
+        border-top: 1px solid var(--color-border);
+        margin: 3em 0;
+      }
+
+      .prose :global(table) {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 2em 0;
+        font-size: 0.95em;
+      }
+      
+      .prose :global(th) {
+        text-align: left;
+        padding: 0.75rem;
+        border-bottom: 1px solid var(--color-border);
+        font-weight: 600;
+        color: var(--color-foreground);
+      }
+      
+      .prose :global(td) {
+        padding: 0.75rem;
+        border-bottom: 1px solid var(--color-border);
+        color: var(--color-muted);
+      }
+
+      .sr-only {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border-width: 0;
+      }
+    </style>
+  </head>
+
+  <body>
+    <Header />
+    <main>
+      <article>
+        <div class="hero-section">
+          <div class="article-meta">
+            <FormattedDate date={pubDate} />
+            {
+              updatedDate && (
+                <span class="updated-date">
+                  (Updated: <FormattedDate date={updatedDate} />)
+                </span>
+              )
+            }
+          </div>
+          
+          <div class="title">
+            <h1>{title}</h1>
+            {description && <p class="description">{description}</p>}
+          </div>
+        </div>
+
+        {image && (
+          <div class="hero-image-container">
+            <Image width={1020} height={510} src={image} alt={title} quality="high" />
+          </div>
+        )}
+
+        <hr class="separator" />
+
+        <div class="prose">
+          <slot />
+        </div>
+      </article>
+    </main>
+    <Footer />
+  </body>
 </html>
