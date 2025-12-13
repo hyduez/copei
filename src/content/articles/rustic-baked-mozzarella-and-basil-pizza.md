@@ -3,7 +3,7 @@ title: 'Rustic Baked Mozzarella and Basil Pizza'
 description: 'A crunchy crust topped with homemade tomato sauce and fresh buffalo mozzarella.'
 category: 'Junk'
 pubDate: 'Dec 11 2025'
-image: '../../assets/articles/rustic-baked-mozzarella-and-basil-pizza.jpg'
+image: '../../assets/articles/rustic-baked-mozzarella-and-basil-pizza.webp'
 time: '40 mins'
 servings: 4
 difficulty: 'Medium'
