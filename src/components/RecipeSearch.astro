@@ -205,11 +205,7 @@ const firstArticle = articles[0];
 
     const imgElement = card.querySelector('img');
     if (article.image && imgElement) {
-      if (article.image.src) {
-        imgElement.src = article.image.src;
-      } else {
-        imgElement.src = article.image;
-      }
+      imgElement.src = article.image.src || article.image;
     }
 
     return cardWrapper;
