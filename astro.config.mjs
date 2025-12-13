@@ -15,5 +15,5 @@ export default defineConfig({
     plugins: [tailwindcss()],
   },
   adapter: vercelAdapter(),
-  output: "server"
+  output: 'static'
 });
