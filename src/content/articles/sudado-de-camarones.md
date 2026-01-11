@@ -1,6 +1,6 @@
 ---
 title: 'Sudado de Camarones'
-description: 'Steamed [PROTEIN_DESC] in tomato and onion sauce.'
+description: 'Steamed Shrimps in tomato and onion sauce.'
 category: 'healthy'
 pubDate: 'Jan 12, 2026'
 image: '../../assets/articles/sudado-de-camarones.webp'
@@ -12,7 +12,7 @@ tags: ["steamed","healthy","quick-meal","ecuadorian-classic"]
 ---
 ## 🍛 Sudado de Camarones
 
-Steamed [PROTEIN_DESC] in tomato and onion sauce.
+Steamed Shrimps in tomato and onion sauce.
 
 This simple steamed dish showcases the natural flavors of the protein in a light tomato sauce.
 

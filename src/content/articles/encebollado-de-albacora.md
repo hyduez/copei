@@ -1,6 +1,6 @@
 ---
 title: 'Encebollado de Albacora'
-description: 'Traditional Ecuadorian fish soup with [PROTEIN_DESC], cassava, and pickled onions.'
+description: 'Traditional Ecuadorian fish soup with Albacora, cassava, and pickled onions.'
 category: 'healthy'
 pubDate: 'Jan 12, 2026'
 image: '../../assets/articles/encebollado-de-albacora.webp'
@@ -12,7 +12,7 @@ tags: ["soup","fish","healthy","ecuadorian-classic"]
 ---
 ## 🍲 Encebollado de Albacora
 
-Traditional Ecuadorian fish soup with [PROTEIN_DESC], cassava, and pickled onions.
+Traditional Ecuadorian fish soup with Albacora, cassava, and pickled onions.
 
 This hearty fish soup is considered Ecuador's national dish, especially popular on the coast.
 

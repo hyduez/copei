@@ -1,6 +1,6 @@
 ---
 title: 'Sudado de Pollo'
-description: 'Steamed [PROTEIN_DESC] in tomato and onion sauce.'
+description: 'Steamed Chicken in tomato and onion sauce.'
 category: 'healthy'
 pubDate: 'Jan 12, 2026'
 image: '../../assets/articles/sudado-de-pollo.webp'
@@ -12,7 +12,7 @@ tags: ["steamed","healthy","quick-meal","ecuadorian-classic"]
 ---
 ## 🍛 Sudado de Pollo
 
-Steamed [PROTEIN_DESC] in tomato and onion sauce.
+Steamed Chicken in tomato and onion sauce.
 
 This simple steamed dish showcases the natural flavors of the protein in a light tomato sauce.
 
