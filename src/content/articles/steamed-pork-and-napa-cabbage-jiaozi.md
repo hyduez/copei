@@ -2,7 +2,7 @@
 title: 'Steamed Pork and Napa Cabbage Jiaozi'
 description: 'Delicate stuffed pockets, steamed to savory perfection.'
 category: 'healthy'
-pubDate: 'Dec 11 2025'
+pubDate: 'Jan 12, 2026'
 image: '../../assets/articles/steamed-pork-and-napa-cabbage-jiaozi.webp'
 time: '55 mins'
 servings: 3

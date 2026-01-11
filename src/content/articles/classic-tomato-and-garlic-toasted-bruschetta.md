@@ -2,7 +2,7 @@
 title: 'Classic Tomato and Garlic Toasted Bruschetta'
 description: 'Artisan bread toasted and rubbed with garlic, topped with fresh tomato.'
 category: 'junk'
-pubDate: 'Dec 11 2025'
+pubDate: 'Jan 12, 2026'
 image: '../../assets/articles/classic-tomato-and-garlic-toasted-bruschetta.webp'
 time: '10 mins'
 servings: 2

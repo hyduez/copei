@@ -2,7 +2,7 @@
 title: 'Teriyaki Chicken and Crunchy Vegetable Stir Fry'
 description: 'Quick stir-fry of chicken strips and a vibrant mix of seasonal vegetables.'
 category: 'healthy'
-pubDate: 'Dec 11 2025'
+pubDate: 'Jan 12, 2026'
 image: '../../assets/articles/teriyaki-chickend-and-crunchy-vegetable-stir-fry.webp'
 time: '30 mins'
 servings: 3
