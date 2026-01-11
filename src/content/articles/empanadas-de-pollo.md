@@ -2,8 +2,8 @@
 title: 'Empanadas de Pollo'
 description: 'Traditional Ecuadorian empanadas filled with seasoned chicken.'
 category: 'healthy'
-pubDate: 'Mar 4, 2024'
-image: '../../assets/articles/rustic-baked-mozzarella-and-basil-pizza.webp'
+pubDate: 'Jan 12, 2026'
+image: '../../assets/articles/empanadas-de-pollo.webp'
 time: '45 mins'
 servings: 6
 difficulty: 'Medium'

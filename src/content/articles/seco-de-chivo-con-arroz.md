@@ -2,8 +2,8 @@
 title: 'Seco de Chivo con Arroz'
 description: 'Slow-cooked goat in beer and cilantro sauce served with Arroz.'
 category: 'healthy'
-pubDate: 'Nov 25, 2024'
-image: '../../assets/articles/farmhouse-roasted-chicken-with-creamy-garlic-mash.webp'
+pubDate: 'Jan 12, 2026'
+image: '../../assets/articles/seco-de-chivo-con-arroz.webp'
 time: '90 mins'
 servings: 6
 difficulty: 'Medium'

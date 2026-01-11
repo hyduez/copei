@@ -2,8 +2,8 @@
 title: 'Empanadas de Carne'
 description: 'Traditional Ecuadorian empanadas filled with spiced ground beef.'
 category: 'healthy'
-pubDate: 'Mar 11, 2024'
-image: '../../assets/articles/rustic-baked-mozzarella-and-basil-pizza.webp'
+pubDate: 'Jan 12, 2026'
+image: '../../assets/articles/empanadas-de-carne.webp'
 time: '45 mins'
 servings: 6
 difficulty: 'Medium'

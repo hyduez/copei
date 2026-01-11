@@ -2,8 +2,8 @@
 title: 'Bolon de Verde con Queso'
 description: 'Green plantain dough balls filled with fresh cheese.'
 category: 'healthy'
-pubDate: 'Sep 9, 2024'
-image: '../../assets/articles/nordic-toasts-with-smoked-salmon-and-dill.webp'
+pubDate: 'Jan 12, 2026'
+image: '../../assets/articles/bolon-de-verde-con-queso.webp'
 time: '30 mins'
 servings: 4
 difficulty: 'Easy'

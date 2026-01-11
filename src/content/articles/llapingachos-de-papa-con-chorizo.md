@@ -2,8 +2,8 @@
 title: 'Llapingachos de Papa con Chorizo'
 description: 'Cheese-stuffed potato patties served with Ecuadorian sausage and peanut sauce.'
 category: 'healthy'
-pubDate: 'Aug 12, 2024'
-image: '../../assets/articles/farmhouse-roasted-chicken-with-creamy-garlic-mash.webp'
+pubDate: 'Jan 12, 2026'
+image: '../../assets/articles/llapingachos-de-papa-con-chorizo.webp'
 time: '40 mins'
 servings: 4
 difficulty: 'Medium'

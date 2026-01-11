@@ -2,8 +2,8 @@
 title: 'Bolon de Verde con Pollo'
 description: 'Green plantain dough balls filled with shredded chicken.'
 category: 'healthy'
-pubDate: 'Oct 7, 2024'
-image: '../../assets/articles/nordic-toasts-with-smoked-salmon-and-dill.webp'
+pubDate: 'Jan 12, 2025'
+image: '../../assets/articles/bolon-de-verde-con-pollo.webp'
 time: '30 mins'
 servings: 4
 difficulty: 'Easy'

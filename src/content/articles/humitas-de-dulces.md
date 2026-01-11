@@ -2,8 +2,8 @@
 title: 'Humitas de Dulces'
 description: 'Traditional Ecuadorian steamed corn cakes with sweet corn.'
 category: 'healthy'
-pubDate: 'Jun 24, 2024'
-image: '../../assets/articles/steamed-pork-and-napa-cabbage-jiaozi.webp'
+pubDate: 'Jan 12, 2026'
+image: '../../assets/articles/humitas-de-dulces.webp'
 time: '60 mins'
 servings: 8
 difficulty: 'Medium'

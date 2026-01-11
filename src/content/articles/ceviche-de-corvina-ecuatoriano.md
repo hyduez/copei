@@ -1,16 +1,16 @@
 ---
-title: 'Ceviche de Corvina Ecuatoriano'
+title: 'Ceviche de Corvina'
 description: 'Fresh corvina marinated in citrus juices with onions, tomatoes, and cilantro.'
 category: 'healthy'
-pubDate: 'Feb 5, 2024'
-image: '../../assets/articles/classic-tomato-and-garlic-toasted-bruschetta.webp'
+pubDate: 'Jan 12, 2026'
+image: '../../assets/articles/ceviche-de-corvina-ecuatoriano.webp'
 time: '20-30 mins'
 servings: 4
 difficulty: 'Easy'
 calories: 180
 tags: ["seafood","healthy","quick-meal","ecuadorian-classic"]
 ---
-## 🐟 Ceviche de Corvina Ecuatoriano
+## 🐟 Ceviche de Corvina
 
 Fresh corvina marinated in citrus juices with onions, tomatoes, and cilantro.
 

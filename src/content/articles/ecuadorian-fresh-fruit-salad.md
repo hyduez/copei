@@ -2,8 +2,8 @@
 title: 'Ecuadorian Fresh Fruit Salad'
 description: 'Tropical fruits with lime and honey dressing.'
 category: 'healthy'
-pubDate: 'Feb 24, 2025'
-image: '../../assets/articles/classic-tomato-and-garlic-toasted-bruschetta.webp'
+pubDate: 'Jan 12, 2026'
+image: '../../assets/articles/ecuadorian-fresh-fruit-salad.webp'
 time: '15 mins'
 servings: 4
 difficulty: 'Easy'

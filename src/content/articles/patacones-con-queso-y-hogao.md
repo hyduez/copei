@@ -2,8 +2,8 @@
 title: 'Patacones con Queso y Hogao'
 description: 'Twice-fried green plantain patties topped with cheese and tomato sauce.'
 category: 'healthy'
-pubDate: 'Jun 10, 2024'
-image: '../../assets/articles/grilled-lemon-herb-shrimp-skewers.webp'
+pubDate: 'Jan 12, 2026'
+image: '../../assets/articles/patacones-con-queso-y-hogao.webp'
 time: '25 mins'
 servings: 4
 difficulty: 'Easy'

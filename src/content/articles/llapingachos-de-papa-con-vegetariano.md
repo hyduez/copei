@@ -2,13 +2,13 @@
 title: 'Llapingachos de Papa con Vegetariano'
 description: 'Cheese-stuffed potato patties served with avocado and salad and peanut sauce.'
 category: 'healthy'
-pubDate: 'Sep 2, 2024'
-image: '../../assets/articles/farmhouse-roasted-chicken-with-creamy-garlic-mash.webp'
+pubDate: 'Jan 12, 2026'
+image: '../../assets/articles/llapingachos-de-papa-con-vegetariano.webp'
 time: '40 mins'
 servings: 4
 difficulty: 'Medium'
 calories: 280
-tags: ["potato","cheese","healthy","main-dish","ecuadorian-classic"]
+tags: ["potato","cheese","healthy","main-dish","ecuadorian-classic","vegetarian"]
 ---
 ## 🥔 Llapingachos de Papa con Vegetariano
 

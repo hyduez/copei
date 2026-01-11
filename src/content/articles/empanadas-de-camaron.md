@@ -2,8 +2,8 @@
 title: 'Empanadas de Camaron'
 description: 'Traditional Ecuadorian empanadas filled with shrimp.'
 category: 'healthy'
-pubDate: 'Apr 1, 2024'
-image: '../../assets/articles/rustic-baked-mozzarella-and-basil-pizza.webp'
+pubDate: 'Jan 12, 2026'
+image: '../../assets/articles/empanadas-de-camaron.webp'
 time: '45 mins'
 servings: 6
 difficulty: 'Medium'

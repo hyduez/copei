@@ -1,16 +1,16 @@
 ---
-title: 'Ceviche de Calamar Ecuatoriano'
+title: 'Ceviche de Calamar'
 description: 'Fresh calamar marinated in citrus juices with onions, tomatoes, and cilantro.'
 category: 'healthy'
-pubDate: 'Jan 29, 2024'
-image: '../../assets/articles/classic-tomato-and-garlic-toasted-bruschetta.webp'
+pubDate: 'Jan 12, 2026'
+image: '../../assets/articles/ceviche-de-calamar-ecuatoriano.webp'
 time: '20-30 mins'
 servings: 4
 difficulty: 'Easy'
 calories: 180
 tags: ["seafood","healthy","quick-meal","ecuadorian-classic"]
 ---
-## 🐟 Ceviche de Calamar Ecuatoriano
+## 🐟 Ceviche de Calamar
 
 Fresh calamar marinated in citrus juices with onions, tomatoes, and cilantro.
 

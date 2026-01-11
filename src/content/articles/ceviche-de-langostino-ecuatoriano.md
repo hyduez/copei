@@ -1,16 +1,16 @@
 ---
-title: 'Ceviche de Langostino Ecuatoriano'
+title: 'Ceviche de Langostino'
 description: 'Fresh langostino marinated in citrus juices with onions, tomatoes, and cilantro.'
 category: 'healthy'
-pubDate: 'Feb 19, 2024'
-image: '../../assets/articles/classic-tomato-and-garlic-toasted-bruschetta.webp'
+pubDate: 'Jan 12, 2026'
+image: '../../assets/articles/ceviche-de-langostino-ecuatoriano.webp'
 time: '20-30 mins'
 servings: 4
 difficulty: 'Easy'
 calories: 180
 tags: ["seafood","healthy","quick-meal","ecuadorian-classic"]
 ---
-## 🐟 Ceviche de Langostino Ecuatoriano
+## 🐟 Ceviche de Langostino
 
 Fresh langostino marinated in citrus juices with onions, tomatoes, and cilantro.
 

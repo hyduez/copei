@@ -2,7 +2,7 @@
 title: 'Farmhouse Roasted Chicken with Creamy Garlic Mash'
 description: 'A comforting classic: juicy chicken with crispy skin and smooth purée.'
 category: 'junk'
-pubDate: 'Dec 11 2025'
+pubDate: 'Jan 12, 2026'
 image: '../../assets/articles/farmhouse-roasted-chicken-with-creamy-garlic-mash.webp'
 time: '90 mins'
 servings: 4

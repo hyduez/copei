@@ -2,8 +2,8 @@
 title: 'Sudado de Mixto'
 description: 'Steamed [PROTEIN_DESC] in tomato and onion sauce.'
 category: 'healthy'
-pubDate: 'Dec 30, 2024'
-image: '../../assets/articles/teriyaki-chickend-and-crunchy-vegetable-stir-fry.webp'
+pubDate: 'Jan 12, 2026'
+image: '../../assets/articles/sudado-de-mixto.webp'
 time: '35 mins'
 servings: 4
 difficulty: 'Easy'

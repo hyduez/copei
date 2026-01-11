@@ -2,8 +2,8 @@
 title: 'Empanadas de Verde con Queso'
 description: 'Traditional Ecuadorian empanadas filled with green plantain and cheese.'
 category: 'healthy'
-pubDate: 'Mar 18, 2024'
-image: '../../assets/articles/rustic-baked-mozzarella-and-basil-pizza.webp'
+pubDate: 'Jan 12, 2026'
+image: '../../assets/articles/empanadas-de-verde-con-queso.webp'
 time: '45 mins'
 servings: 6
 difficulty: 'Medium'

@@ -2,8 +2,8 @@
 title: 'Encebollado de Mixto'
 description: 'Traditional Ecuadorian fish soup with [PROTEIN_DESC], cassava, and pickled onions.'
 category: 'healthy'
-pubDate: 'Nov 4, 2024'
-image: '../../assets/articles/teriyaki-chickend-and-crunchy-vegetable-stir-fry.webp'
+pubDate: 'Jan 12, 2026'
+image: '../../assets/articles/encebollado-de-mixto.webp'
 time: '40 mins'
 servings: 6
 difficulty: 'Medium'

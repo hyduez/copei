@@ -2,8 +2,8 @@
 title: 'Llapingachos de Papa con Carne'
 description: 'Cheese-stuffed potato patties served with grilled beef and peanut sauce.'
 category: 'healthy'
-pubDate: 'Jul 29, 2024'
-image: '../../assets/articles/farmhouse-roasted-chicken-with-creamy-garlic-mash.webp'
+pubDate: 'Jan 12, 2026'
+image: '../../assets/articles/llapingachos-de-papa-con-carne.webp'
 time: '40 mins'
 servings: 4
 difficulty: 'Medium'

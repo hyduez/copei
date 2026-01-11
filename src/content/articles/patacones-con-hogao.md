@@ -2,8 +2,8 @@
 title: 'Patacones con Hogao'
 description: 'Twice-fried green plantain patties topped with tomato and onion sauce.'
 category: 'healthy'
-pubDate: 'Jun 3, 2024'
-image: '../../assets/articles/grilled-lemon-herb-shrimp-skewers.webp'
+pubDate: 'Jan 12, 2026'
+image: '../../assets/articles/patacones-con-hogao.webp'
 time: '25 mins'
 servings: 4
 difficulty: 'Easy'

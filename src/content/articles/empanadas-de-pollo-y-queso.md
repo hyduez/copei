@@ -2,8 +2,8 @@
 title: 'Empanadas de Pollo y Queso'
 description: 'Traditional Ecuadorian empanadas filled with chicken and cheese.'
 category: 'healthy'
-pubDate: 'Apr 15, 2024'
-image: '../../assets/articles/rustic-baked-mozzarella-and-basil-pizza.webp'
+pubDate: 'Jan 12, 2026'
+image: '../../assets/articles/empanadas-de-pollo-y-queso.webp'
 time: '45 mins'
 servings: 6
 difficulty: 'Medium'

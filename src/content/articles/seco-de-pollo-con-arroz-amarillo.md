@@ -2,8 +2,8 @@
 title: 'Seco de Pollo con Arroz Amarillo'
 description: 'Slow-cooked chicken in beer and cilantro sauce served with Arroz Amarillo.'
 category: 'healthy'
-pubDate: 'Nov 11, 2024'
-image: '../../assets/articles/farmhouse-roasted-chicken-with-creamy-garlic-mash.webp'
+pubDate: 'Jan 12, 2026'
+image: '../../assets/articles/seco-de-pollo-con-arroz-amarillo.webp'
 time: '90 mins'
 servings: 6
 difficulty: 'Medium'

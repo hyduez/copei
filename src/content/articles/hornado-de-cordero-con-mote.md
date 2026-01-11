@@ -2,8 +2,8 @@
 title: 'Hornado de Cordero con Mote'
 description: 'Slow-roasted lamb served with Mote.'
 category: 'healthy'
-pubDate: 'Jan 13, 2025'
-image: '../../assets/articles/farmhouse-roasted-chicken-with-creamy-garlic-mash.webp'
+pubDate: 'Jan 12, 2026'
+image: '../../assets/articles/hornado-de-cordero-con-mote.webp'
 time: '180 mins'
 servings: 8
 difficulty: 'Hard'

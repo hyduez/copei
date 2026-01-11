@@ -1,8 +1,8 @@
 ---
-title: 'Ceviche de Camarón Ecuatoriano'
+title: 'Ceviche de Camarón'
 description: 'Fresh camarón marinated in citrus juices with onions, tomatoes, and cilantro.'
 category: 'healthy'
-pubDate: 'Jan 8, 2024'
+pubDate: 'Jan 12, 2026'
 image: '../../assets/articles/classic-tomato-and-garlic-toasted-bruschetta.webp'
 time: '20-30 mins'
 servings: 4
@@ -10,7 +10,7 @@ difficulty: 'Easy'
 calories: 180
 tags: ["seafood","healthy","quick-meal","ecuadorian-classic"]
 ---
-## 🐟 Ceviche de Camarón Ecuatoriano
+## 🐟 Ceviche de Camarón
 
 Fresh camarón marinated in citrus juices with onions, tomatoes, and cilantro.
 

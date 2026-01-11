@@ -2,8 +2,8 @@
 title: 'Patacones con Carne Desmechada'
 description: 'Twice-fried green plantain patties topped with shredded beef.'
 category: 'healthy'
-pubDate: 'May 13, 2024'
-image: '../../assets/articles/grilled-lemon-herb-shrimp-skewers.webp'
+pubDate: 'Jan 12, 2026'
+image: '../../assets/articles/patacones-con-carne-desmechada.webp'
 time: '25 mins'
 servings: 4
 difficulty: 'Easy'

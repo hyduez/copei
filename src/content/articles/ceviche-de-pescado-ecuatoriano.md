@@ -1,16 +1,16 @@
 ---
-title: 'Ceviche de Pescado Ecuatoriano'
+title: 'Ceviche de Pescado'
 description: 'Fresh pescado marinated in citrus juices with onions, tomatoes, and cilantro.'
 category: 'healthy'
-pubDate: 'Jan 1, 2024'
-image: '../../assets/articles/classic-tomato-and-garlic-toasted-bruschetta.webp'
+pubDate: 'Jan 12, 2026'
+image: '../../assets/articles/ceviche-de-pescado-ecuatoriano.webp'
 time: '20-30 mins'
 servings: 4
 difficulty: 'Easy'
 calories: 180
 tags: ["seafood","healthy","quick-meal","ecuadorian-classic"]
 ---
-## 🐟 Ceviche de Pescado Ecuatoriano
+## 🐟 Ceviche de Pescado
 
 Fresh pescado marinated in citrus juices with onions, tomatoes, and cilantro.
 

@@ -2,8 +2,8 @@
 title: 'Humitas de Queso'
 description: 'Traditional Ecuadorian steamed corn cakes with fresh cheese.'
 category: 'healthy'
-pubDate: 'Jun 17, 2024'
-image: '../../assets/articles/steamed-pork-and-napa-cabbage-jiaozi.webp'
+pubDate: 'Jan 12, 2026'
+image: '../../assets/articles/humitas-de-queso.webp'
 time: '60 mins'
 servings: 8
 difficulty: 'Medium'

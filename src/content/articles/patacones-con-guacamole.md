@@ -2,8 +2,8 @@
 title: 'Patacones con Guacamole'
 description: 'Twice-fried green plantain patties topped with homemade guacamole.'
 category: 'healthy'
-pubDate: 'May 6, 2024'
-image: '../../assets/articles/grilled-lemon-herb-shrimp-skewers.webp'
+pubDate: 'Jan 12, 2026'
+image: '../../assets/articles/patacones-con-guacamole.webp'
 time: '25 mins'
 servings: 4
 difficulty: 'Easy'

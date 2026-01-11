@@ -2,8 +2,8 @@
 title: 'Bolon de Verde con Queso y Chicharron'
 description: 'Green plantain dough balls filled with cheese and pork.'
 category: 'healthy'
-pubDate: 'Sep 23, 2024'
-image: '../../assets/articles/nordic-toasts-with-smoked-salmon-and-dill.webp'
+pubDate: 'Jan 12, 2026'
+image: '../../assets/articles/bolon-de-verde-con-queso-y-chicharron.webp'
 time: '30 mins'
 servings: 4
 difficulty: 'Easy'

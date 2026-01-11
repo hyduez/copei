@@ -2,8 +2,8 @@
 title: 'Hornado de Pollo con Papitas'
 description: 'Slow-roasted chicken served with Papitas.'
 category: 'healthy'
-pubDate: 'Jan 20, 2025'
-image: '../../assets/articles/farmhouse-roasted-chicken-with-creamy-garlic-mash.webp'
+pubDate: 'Jan 12, 2026'
+image: '../../assets/articles/hornado-de-pollo-con-papitas.webp'
 time: '180 mins'
 servings: 8
 difficulty: 'Hard'

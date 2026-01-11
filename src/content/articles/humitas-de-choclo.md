@@ -2,8 +2,8 @@
 title: 'Humitas de Choclo'
 description: 'Traditional Ecuadorian steamed corn cakes with sweet white corn.'
 category: 'healthy'
-pubDate: 'Jul 15, 2024'
-image: '../../assets/articles/steamed-pork-and-napa-cabbage-jiaozi.webp'
+pubDate: 'Jan 12, 2026'
+image: '../../assets/articles/humitas-de-choclo.webp'
 time: '60 mins'
 servings: 8
 difficulty: 'Medium'

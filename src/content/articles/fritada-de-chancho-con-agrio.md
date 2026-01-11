@@ -2,8 +2,8 @@
 title: 'Fritada de Chancho con Agrio'
 description: 'Traditional fried pork served with fermented corn drink.'
 category: 'healthy'
-pubDate: 'Feb 10, 2025'
-image: '../../assets/articles/farmhouse-roasted-chicken-with-creamy-garlic-mash.webp'
+pubDate: 'Jan 12, 2026'
+image: '../../assets/articles/fritada-de-chancho-con-agrio.webp'
 time: '120 mins'
 servings: 6
 difficulty: 'Medium'

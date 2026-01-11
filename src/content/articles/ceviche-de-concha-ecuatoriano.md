@@ -1,16 +1,16 @@
 ---
-title: 'Ceviche de Concha Ecuatoriano'
+title: 'Ceviche de Concha'
 description: 'Fresh concha marinated in citrus juices with onions, tomatoes, and cilantro.'
 category: 'healthy'
-pubDate: 'Jan 22, 2024'
-image: '../../assets/articles/classic-tomato-and-garlic-toasted-bruschetta.webp'
+pubDate: 'Jan 12, 2026'
+image: '../../assets/articles/ceviche-de-concha-ecuatoriano.webp'
 time: '20-30 mins'
 servings: 4
 difficulty: 'Easy'
 calories: 180
 tags: ["seafood","healthy","quick-meal","ecuadorian-classic"]
 ---
-## 🐟 Ceviche de Concha Ecuatoriano
+## 🐟 Ceviche de Concha
 
 Fresh concha marinated in citrus juices with onions, tomatoes, and cilantro.
 

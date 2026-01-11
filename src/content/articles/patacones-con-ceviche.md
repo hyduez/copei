@@ -2,8 +2,8 @@
 title: 'Patacones con Ceviche'
 description: 'Twice-fried green plantain patties topped with fresh ceviche.'
 category: 'healthy'
-pubDate: 'Apr 22, 2024'
-image: '../../assets/articles/grilled-lemon-herb-shrimp-skewers.webp'
+pubDate: 'Jan 12, 2026'
+image: '../../assets/articles/patacones-con-ceviche.webp'
 time: '25 mins'
 servings: 4
 difficulty: 'Easy'

@@ -2,8 +2,8 @@
 title: 'Empanadas de Queso'
 description: 'Traditional Ecuadorian empanadas filled with melted cheese.'
 category: 'healthy'
-pubDate: 'Feb 26, 2024'
-image: '../../assets/articles/rustic-baked-mozzarella-and-basil-pizza.webp'
+pubDate: 'Jan 12, 2026'
+image: '../../assets/articles/empanadas-de-queso.webp'
 time: '45 mins'
 servings: 6
 difficulty: 'Medium'

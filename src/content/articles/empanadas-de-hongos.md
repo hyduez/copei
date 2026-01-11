@@ -2,8 +2,8 @@
 title: 'Empanadas de Hongos'
 description: 'Traditional Ecuadorian empanadas filled with sautéed mushrooms.'
 category: 'healthy'
-pubDate: 'Apr 8, 2024'
-image: '../../assets/articles/rustic-baked-mozzarella-and-basil-pizza.webp'
+pubDate: 'Jan 12, 2026'
+image: '../../assets/articles/empanadas-de-hongos.webp'
 time: '45 mins'
 servings: 6
 difficulty: 'Medium'
