@@ -3,7 +3,7 @@ title: 'Ceviche de Camarón'
 description: 'Fresh camarón marinated in citrus juices with onions, tomatoes, and cilantro.'
 category: 'healthy'
 pubDate: 'Jan 12, 2026'
-image: '../../assets/articles/classic-tomato-and-garlic-toasted-bruschetta.webp'
+image: '../../assets/articles/ceviche-de-camarn-ecuatoriano.webp'
 time: '20-30 mins'
 servings: 4
 difficulty: 'Easy'
